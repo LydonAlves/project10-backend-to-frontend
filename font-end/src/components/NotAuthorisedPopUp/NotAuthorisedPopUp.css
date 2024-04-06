@@ -1,0 +1,67 @@
+.popUpDivAuthorization {
+  z-index: 9999;
+  width: max-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: 30%;
+  border: none;
+  background-color: var(--color-01);
+  position: fixed;
+  padding: var(--padding-l);
+  text-align: center;
+}
+
+.popUpText {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.buttonPopupDiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: var(--gap-s);
+  margin-top: var(--margin-xxl);
+}
+
+.homeScreenButton {
+  height: max-content;
+  font-family: Roboto, sans-serif;
+  width: max-content;
+  font-weight: 0;
+  font-size: 14px;
+  color: var(--color-03);
+  background-color: var(--color-05);
+  padding: 10px 30px;
+  border: solid 2px var(--color-05);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 50px;
+  transition: 1000ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.homeScreenButton:hover {
+  transition: 1000ms;
+  transform: translateY(-0px);
+  background-color: var(--color-02);
+  color: var(--color-05);
+  border: solid 2px var(--color-05);
+}
+
+@media (max-width: 600px) {
+  .popUpDivAuthorization {
+    width: 300px;
+  }
+
+  .homeScreenButton {
+    position: relative;
+    padding: 6px 12px;
+    bottom: 30px;
+  }
+}

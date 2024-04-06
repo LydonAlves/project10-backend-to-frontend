@@ -1,0 +1,86 @@
+.formCreatedDiv {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: var(--padding-m);
+  align-items: center;
+}
+
+.eventDetails > p {
+  width: max-content;
+  margin-bottom: var(--margin-s);
+  color: var(--color-00);
+  font-weight: 500;
+}
+
+.eventCreatedTitle {
+  font-size: 31px;
+  padding: var(--padding-l);
+  text-align: center;
+  color: var(--color-06);
+  font-weight: 500;
+}
+
+.EventCreatedDescriptionDiv {
+  width: 80%;
+  margin-bottom: var(--margin-s);
+}
+
+.eventCreatedDescription {
+  color: var(--color-00);
+  font-weight: 500;
+  text-align: center;
+}
+
+.continueButton {
+  height: max-content;
+  font-family: Roboto, sans-serif;
+  width: max-content;
+  font-weight: 0;
+  font-size: 14px;
+  color: var(--color-05);
+  background-color: var(--color-06);
+  border: solid 1px var(--color-06);
+  padding: 5px 15px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 50px;
+  transition: 1000ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: var(--margin-s);
+  right: -10px;
+  bottom: 0;
+  position: absolute;
+}
+
+.continueButton:hover {
+  transition: 1000ms;
+  transform: translateY(-0px);
+  background-color: var(--color-05);
+  color: var(--color-06);
+  border: solid 1px var(--color-06);
+}
+
+.eventImageContainer {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: var(--padding-s) 0;
+}
+
+.eventCreatedImage {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}

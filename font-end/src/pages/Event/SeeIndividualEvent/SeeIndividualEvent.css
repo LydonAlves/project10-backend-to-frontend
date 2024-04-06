@@ -1,0 +1,100 @@
+.individualEventSection {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.individualEventDiv {
+  width: 60%;
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: solid rgba(0, 0, 0, 0.219) 0.5px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-02);
+}
+
+.individualEventDiv > img {
+  height: 40%;
+  width: 100%;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.individualEventDiv {
+  color: var(--color-04);
+}
+
+.showEventDate,
+.showEventDescription,
+.eventDescriptionText {
+  color: var(--color-05);
+}
+
+.showEventDate {
+  font-weight: 700;
+  margin-bottom: var(--margin-xs);
+  padding-left: var(--padding-s);
+}
+
+.individualEventDiv > .showEventTitle {
+  font-size: 30px;
+  color: var(--color-05);
+}
+
+.showEventLocation {
+  padding-left: var(--padding-s);
+  color: var(--color-04);
+}
+
+.showEventDescription {
+  margin-top: var(--margin-xs);
+  margin-bottom: var(--margin-xxs);
+  font-weight: 500;
+  padding-left: var(--padding-s);
+}
+
+.eventDescriptionText {
+  height: 55px;
+  border: solid var(--color-02) 0.5px;
+  margin-bottom: 80px;
+  width: 90%;
+  padding: 2px;
+  margin-left: var(--padding-s);
+}
+
+.individualEventBack {
+  position: absolute;
+  align-self: flex-end;
+  bottom: 15px;
+  right: 30px;
+}
+
+.seeAttendeeButton {
+  position: absolute;
+  align-self: flex-start;
+  bottom: 15px;
+  left: 30px;
+}
+
+@media (max-width: 600px) {
+  .individualEventDiv {
+    width: 90%;
+  }
+
+  .individualEventDiv > .showEventTitle {
+    font-size: 28px;
+    padding-bottom: var(--padding-s);
+  }
+
+  .eventDescriptionText {
+    font-size: 14px;
+  }
+
+  .individualEventBack,
+  .seeAttendeeButton {
+    padding: 5px var(--padding-xs);
+  }
+}

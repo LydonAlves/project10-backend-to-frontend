@@ -1,0 +1,104 @@
+.printUserSection {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: var(--gap-xl);
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: var(--padding-xl);
+  margin-left: var(--margin-xl);
+}
+
+.printUserDiv {
+  width: 350px;
+  height: 210px;
+  display: flex;
+  border: solid rgba(0, 0, 0, 0.219) 0.5px;
+  background-color: var(--color-03);
+  margin-right: var(--margin-m);
+}
+
+.userDiv {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-content: center;
+  border: none;
+  flex-wrap: wrap;
+}
+
+.userAvatar {
+  height: 75%;
+  width: 75%;
+  border-radius: 50%;
+}
+
+.userInfoDiv {
+  padding: 0 var(--padding-s);
+  position: relative;
+  margin-left: var(--margin-xs);
+  margin-top: var(--margin-xxs);
+}
+
+.userName {
+  font-weight: 600;
+  margin: var(--margin-xs) 0;
+  color: var(--color-05);
+}
+
+.userEmailTitle,
+.telephoneTitle,
+.cityTitle {
+  font-weight: 600;
+  font-size: small;
+  color: var(--color-05);
+}
+
+.userEmail,
+.telephoneNumber,
+.city {
+  font-size: small;
+  margin-bottom: var(--margin-xs);
+  color: var(--color-04);
+}
+
+.seeMorePrintUsers {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  padding: 4px 15px;
+}
+
+.seeUsersBackButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+@media (max-width: 600px) {
+  .printUserSection {
+    height: 95svh;
+    margin: 0;
+    margin-top: var(--margin-m);
+    padding-top: var(--margin-xl);
+    padding: var(--padding-s);
+  }
+
+  .printUserDiv {
+    width: 95%;
+  }
+
+  .userDiv {
+    width: max-content;
+    padding: var(--padding-xs);
+  }
+
+  .userAvatar {
+    height: 100px;
+    width: 100px;
+  }
+}

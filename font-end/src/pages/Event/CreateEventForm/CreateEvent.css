@@ -1,0 +1,128 @@
+.eventSection {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-07);
+}
+
+.eventForm {
+  height: max-content;
+  width: 400px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 0px var(--padding-m);
+  margin-left: var(--margin-m);
+  background-color: white;
+  border: solid 3px var(--color-00);
+}
+
+.titleText,
+.locationText,
+.dateTitle,
+.descriptionTitle,
+.uploadImgTitle {
+  margin-top: var(--margin-s);
+  margin-bottom: 4px;
+  color: var(--color-01);
+  font-weight: 600;
+}
+
+.day {
+  color: var(--color-01);
+  font-size: 14px;
+}
+
+.month,
+.year {
+  margin-left: var(--margin-xs);
+  color: var(--color-01);
+  font-size: 14px;
+}
+
+#daySelect,
+#monthSelect,
+#yearSelect {
+  height: 20px;
+  background-color: white;
+  border: none;
+  color: var(--color-01);
+  border-bottom: 1px solid var(--color-01);
+}
+
+.eventTitle {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--color-06);
+  margin-top: var(--margin-xs);
+}
+
+.titleInput,
+.locationInput {
+  width: 80%;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid var(--color-01);
+  padding-left: var(--padding-xs);
+  background-color: white;
+  color: var(--color-01);
+}
+
+.titleInput::placeholder,
+.locationInput::placeholder,
+.descriptionInput::placeholder {
+  color: var(--color-01);
+}
+
+input:focus {
+  outline: none;
+}
+
+.descriptionInput {
+  height: 80px;
+  width: 90%;
+  vertical-align: top;
+  padding: var(--padding-xs);
+  background-color: white;
+  border: var(--color-00) solid 1px;
+}
+
+.descriptionFooter {
+  font-size: small;
+  font-style: oblique;
+  color: var(--color-00);
+  color: var(--color-01);
+  margin-left: var(--margin-xxs);
+}
+
+.uploadImgInput {
+  color: white;
+  color: var(--color-01);
+  border: none;
+}
+
+.createEventButtonForm {
+  padding: var(--padding-xs) var(--padding-s);
+  margin: var(--margin-s) 0px;
+  align-self: center;
+  background-color: var(--color-01);
+  border: var(--color-01) solid 2px;
+}
+
+.createEventBack {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.missingInfoText {
+  color: white;
+  color: var(--color-01);
+  text-align: center;
+  padding-bottom: var(--padding-s);
+  width: 100%;
+}

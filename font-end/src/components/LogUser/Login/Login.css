@@ -1,0 +1,10 @@
+.returnButton {
+  width: 70px;
+  height: 40px;
+  background-color: rgb(176, 224, 170);
+  border: none;
+}
+
+.errorText {
+  color: var(--color-01);
+}
