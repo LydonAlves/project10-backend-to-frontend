@@ -1,3 +1,4 @@
+const { isAdmin } = require('../../middleware/auth')
 const {
   getAllUsers,
   register,
