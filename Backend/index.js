@@ -6,7 +6,7 @@ const mainRouter = require('./src/api/routes/MainRouter')
 const cors = require('cors')
 const app = express()
 
-//!----------------------
+//!----to see all requests------------------
 // app.use((req, res, next) => {
 //   console.log(`Incoming request: ${req.method} ${req.path}`)
 //   next()
