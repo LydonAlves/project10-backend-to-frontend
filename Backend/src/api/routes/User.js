@@ -1,5 +1,3 @@
-// const { isAdmin } = require('../../middleware/auth')
-const { isAdmin } = require('../../middleware/auth')
 const {
   getAllUsers,
   register,
