@@ -1,4 +1,5 @@
 import { LoginRegisterForm } from '../../../pages/LoginRegister/LoginRegisterForm/LoginRegister'
+import { loading } from '../../loading/loading'
 import { missingInfoInForm } from './createMissingInfoForm'
 
 import { removeMessageByClassName } from './removeMessageByClass'
@@ -47,12 +48,15 @@ export const Register = async (
     body: finalObject,
     headers: { 'Content-Type': 'application/json' }
   }
+  const loadingSpinner = loading();
+  form.append(loadingSpinner);
 
   try {
     const res = await fetch(
       'http://localhost:3000/api/v1/users/register',
       options
     )
+    loadingSpinner.remove();
 
     if (res.status === 409) {
       const userExistsText = document.createElement('p')
@@ -62,6 +66,7 @@ export const Register = async (
       return
     }
   } catch (error) {
+    loadingSpinner.remove();
     console.log(error)
   }
 

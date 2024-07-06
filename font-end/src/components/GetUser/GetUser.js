@@ -10,7 +10,7 @@ export const SeeAllUsers = async () => {
         Authorization: `Bearer ${token}`
       }
     })
-    // checkIfIsAdmin(response.status)
+    checkIfIsAdmin(response.status)
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)

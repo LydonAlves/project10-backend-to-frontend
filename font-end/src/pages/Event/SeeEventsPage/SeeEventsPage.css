@@ -32,7 +32,6 @@
 .showEventImg {
   width: 100%;
   height: 100%;
-  background-color: rebeccapurple;
 }
 
 .showEventTitle {
@@ -84,6 +83,10 @@
 }
 
 @media (max-width: 600px) {
+  .eventsDivContainer {
+    margin-top: var(--margin-xl);
+  }
+
   .seeMoreButtonEventsP,
   .attendButtonEventsP {
     padding: var(--padding-xs);
@@ -94,18 +97,29 @@
   }
 
   .eventDivShow {
-    width: 80%;
-    height: 40%;
+    width: 70%;
+    min-width: 300px;
+    height: 30%;
     color: var(--color-03);
+    margin-bottom: var(--margin-xl);
+    margin-top: var(--margin-xl);
   }
 
   .showEventTitle {
     text-align: left;
     padding-left: var(--padding-xs);
+    font-size: 24px;
   }
 
   .buttonDiv > button {
     font-size: 10px;
     padding: 6px 10px;
+  }
+
+
+  .eventsIAttendBack {
+    position: absolute;
+    top: 10px;
+    right: 40px;
   }
 }

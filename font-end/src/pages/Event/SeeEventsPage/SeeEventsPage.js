@@ -15,6 +15,8 @@ export const printEvents = (events, eventsImAttending) => {
   const eventsDivContainer = document.createElement('div')
   const homeButton = createHomeButton()
   const back = BackButton()
+  const loggedInUser = localStorage.getItem('token');
+
 
   showEventsSection.className = 'showEventsSection'
   eventsDivContainer.className = 'eventsDivContainer'
@@ -64,8 +66,10 @@ export const printEvents = (events, eventsImAttending) => {
 
     if (eventsImAttending) {
       buttonDiv.append(seeMore)
-    } else {
+    } else if (loggedInUser) {
       buttonDiv.append(seeMore, attendButton)
+    } else {
+      buttonDiv.append(seeMore)
     }
 
     eventDivShow.append(showEventTitle, showEventImg, buttonDiv)

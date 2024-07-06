@@ -11,6 +11,7 @@ export const EventCreated = (eventDetails) => {
   continueButton.className = 'continueButton'
   continueButton.innerText = 'Continue'
 
+
   continueButton.addEventListener('click', () => {
     Home()
   })
@@ -26,11 +27,13 @@ export const EventCreated = (eventDetails) => {
       <p class="eventCreatedDescription">${eventDetails.eventDescription}</p>
   </div>
 </div>
-<div class="eventImageContainer">
-  <img src="${eventDetails.eventImg}" alt="Event Image" class="eventCreatedImage">
-</div>
+${eventDetails.eventImg ? `
+  <div class="eventImageContainer">
+    <img src="${eventDetails.eventImg}" alt="Event Image" class="eventCreatedImage">
+  </div>
+` : ''}
 `
-  //!append a sting to a dynamically created element
+
   formCreatedDiv.insertAdjacentHTML('beforeend', textContentCreatedEvent)
   formCreatedDiv.append(continueButton)
   form.append(formCreatedDiv)

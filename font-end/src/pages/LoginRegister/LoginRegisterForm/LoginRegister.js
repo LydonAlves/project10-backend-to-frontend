@@ -16,6 +16,7 @@ export const LoginRegisterForm = (isNotLoginForm) => {
   const clickableText = document.createElement('a')
   const homeButton = createHomeButton()
 
+
   loginRegisterDiv.id = 'loginRegisterDiv'
   nameInput.placeholder = 'Type your username'
 

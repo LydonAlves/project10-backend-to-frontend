@@ -26,9 +26,11 @@ export const addButtonEventListeners = (welcomeButton) => {
       CreateEventForm()
     }
   })
+  if (user && user.rol === "admin") {
+    seeUsersButton.addEventListener('click', () => {
+      checkIfIsUser(user)
+      SeeAllUsers()
+    })
+  }
 
-  seeUsersButton.addEventListener('click', () => {
-    checkIfIsUser(user)
-    SeeAllUsers()
-  })
 }

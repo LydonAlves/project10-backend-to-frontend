@@ -20,7 +20,16 @@ cloudinary.config({
 
 app.use(express.json())
 connectDb()
-app.use(cors())
+
+const corsOptions = {
+  origin: 'https://project13-frontend.vercel.app',
+  methods: ['GET', 'PUT', 'POST', 'DELETE']
+};
+
+app.use(cors(corsOptions))
+
+
+// app.use(cors())
 
 app.use('/api/v1', mainRouter)
 

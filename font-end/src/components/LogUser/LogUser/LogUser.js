@@ -1,4 +1,6 @@
+import { Home } from '../../../pages/Home/Home'
 import { LoginRegisterForm } from '../../../pages/LoginRegister/LoginRegisterForm/LoginRegister'
+
 
 export const LogUser = (logUser) => {
   const user = localStorage.getItem('user')
@@ -9,6 +11,7 @@ export const LogUser = (logUser) => {
       localStorage.removeItem('token')
       localStorage.removeItem('user')
       LogUser(logUser)
+      Home()
     })
   } else {
     logUser.innerText = 'Login/Register'

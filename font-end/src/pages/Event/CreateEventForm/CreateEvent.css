@@ -11,6 +11,7 @@
   height: max-content;
   width: 400px;
   max-width: 450px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -125,4 +126,15 @@ input:focus {
   text-align: center;
   padding-bottom: var(--padding-s);
   width: 100%;
+}
+
+@media (max-width: 600px){
+  .eventForm {
+    margin: var(--margin-xs);
+  }
+
+  .eventTitle {
+    font-size: 25px;
+  }
+
 }
