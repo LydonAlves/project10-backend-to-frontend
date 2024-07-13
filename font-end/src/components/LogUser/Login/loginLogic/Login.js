@@ -1,5 +1,5 @@
-import { Home } from '../../../pages/Home/Home'
-import { loading } from '../../loading/loading'
+import { Home } from '../../../../pages/Home/Home'
+import { loading } from '../../../loading/loading'
 import './Login.css'
 
 export let userInfo

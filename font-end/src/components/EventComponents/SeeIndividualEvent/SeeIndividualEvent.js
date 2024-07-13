@@ -1,11 +1,11 @@
-import { BackButton } from '../../../components/Buttons/BackButton/BackButton'
-import { createHomeButton } from '../../../components/Buttons/HomeButton/HomeButton'
-import { SeeAttendeeButton } from '../../../components/Buttons/SeeAttendeeButton/SeeAttendee'
-import { ShowAttendeeList } from '../../Attendee/SeeAttendeeList/SeeAttendeeList'
-import { printEvents } from '../SeeEventsPage/SeeEventsPage'
+import { BackButton } from '../../Buttons/BackButton/BackButton'
+import { createHomeButton } from '../../Buttons/HomeButton/HomeButton'
+import { SeeAttendeeButton } from '../../Buttons/SeeAttendeeButton/SeeAttendee'
+import { seeEventsPage } from '../../../pages/Event/SeeEventsPage'
 import './SeeIndividualEvent.css'
+import { fetchAttendeeList } from '../../../utils/fetchAttendeeList'
 
-export const SeeIndividualEvent = (event, eventDetails) => {
+export const SeeIndividualEvent = (eventDetails) => {
   const main = document.querySelector('main')
   main.innerHTML = ''
   const individualEventSection = document.createElement('section')
@@ -16,6 +16,7 @@ export const SeeIndividualEvent = (event, eventDetails) => {
   const seeAttendeeButton = SeeAttendeeButton()
   const back = BackButton()
   const homeButton = createHomeButton()
+  const { event, showEventImg, showEventTitle, showEventDate, events, eventsImAttending } = eventDetails
 
   showEventLocation.innerText = `Location: ${event.location}`
   showEventDescription.innerText = 'Description:'
@@ -30,17 +31,17 @@ export const SeeIndividualEvent = (event, eventDetails) => {
   seeAttendeeButton.classList.add('attendButton', 'seeAttendeeButton')
 
   seeAttendeeButton.addEventListener('click', () => {
-    ShowAttendeeList(event, eventDetails)
+    fetchAttendeeList(event, eventDetails)
   })
 
   back.addEventListener('click', () => {
-    printEvents(eventDetails.events, eventDetails.eventsImAttending)
+    seeEventsPage(events, eventsImAttending)
   })
 
   individualEventDiv.append(
-    eventDetails.showEventImg,
-    eventDetails.showEventTitle,
-    eventDetails.showEventDate,
+    showEventImg,
+    showEventTitle,
+    showEventDate,
     showEventLocation,
     showEventDescription,
     eventDescriptionText,

@@ -22,59 +22,6 @@
   padding-top: var(--padding-s);
 }
 
-.eventDivShow {
-  width: 350px;
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-}
-
-.showEventImg {
-  width: 100%;
-  height: 100%;
-}
-
-.showEventTitle {
-  padding: 4px 0;
-  font-weight: 600;
-  font-size: 28px;
-  text-align: left;
-  padding-left: var(--padding-xs);
-  color: var(--color-03);
-}
-
-.buttonDiv {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: var(--gap-m);
-  margin-top: var(--margin-xs);
-}
-
-.seeMoreButtonEventsP,
-.attendButtonEventsP {
-  font-weight: 0;
-  font-size: 14px;
-  color: var(--color-05);
-  background-color: var(--color-01);
-  padding: 10px 30px;
-  border: none;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
-  border-radius: 50px;
-  transition: 1000ms;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  border: solid 2px var(--color-01);
-}
-
-.seeMoreButtonEventsP:hover,
-.attendButtonEventsP:hover {
-  transition: 1000ms;
-  background-color: var(--color-05);
-  color: var(--color-01);
-}
 
 .eventsIAttendBack {
   position: absolute;

@@ -1,4 +1,4 @@
-import { EventCreated } from '../../../pages/Event/EventCreated/EventCreated'
+import { EventCreated } from '../EventCreated/EventCreated'
 import { missingInfoInForm } from '../../LogUser/Register/createMissingInfoForm'
 
 export const EventLogic = async (eventDetails, form) => {

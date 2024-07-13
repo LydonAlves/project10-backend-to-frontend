@@ -1,0 +1,27 @@
+#loginRegisterDiv {
+  width: 360px;
+  height: 50%;
+  border-radius: var(--border-radius);
+  border: 2px solid #0071e34d;
+}
+
+.loginRegistrationForm {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: var(--padding-m);
+}
+
+.incorrectPassword{
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-04);
+}
+
+@media (max-width: 600px) {
+  #loginRegisterDiv {
+    width: 280px;
+  }
+}

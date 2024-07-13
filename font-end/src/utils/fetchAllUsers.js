@@ -1,15 +1,18 @@
-import { PrintUser } from '../../pages/User/PrintUser/PrintUser'
-import { checkIfIsAdmin } from '../LogUser/Authorization/isAdmin'
 
-export const SeeAllUsers = async () => {
+import { PrintUser } from './../pages/User/PrintUser';
+import { checkIfIsAdmin } from './../components/LogUser/Authorization/isAdmin';
+import { getUserToken } from './getUserToken';
+
+export const fetchAllUsers = async () => {
+  const token = getUserToken()
+
   try {
-    const token = localStorage.getItem('token')
-
     const response = await fetch('http://localhost:3000/api/v1/users', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
+
     checkIfIsAdmin(response.status)
 
     if (!response.ok) {

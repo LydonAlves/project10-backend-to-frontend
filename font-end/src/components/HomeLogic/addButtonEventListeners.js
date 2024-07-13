@@ -1,18 +1,18 @@
-import { CreateEventForm } from '../../pages/Event/CreateEventForm/CreateEvent'
-import { SeeEventsPage } from '../../pages/Event/SeeEventsPage/SeeEventsPage'
+import { fetchAllUsers } from '../../utils/fetchAllUsers'
+import { fetchEvents } from '../../utils/fetchEvents'
+import { getUser } from '../../utils/getUser'
+import { CreateEventForm } from '../EventComponents/CreateEventForm/CreateEvent'
 import { myEventsFindUserId } from '../EventComponents/EventsUserAttends/myEventsFindUser'
-import { SeeAllUsers } from '../GetUser/GetUser'
 import { checkIfIsUser } from '../LogUser/Authorization/IsUser'
 
-export const addButtonEventListeners = (welcomeButton) => {
+export const addButtonEventListeners = async (welcomeButton) => {
   const eventsAttendingButton = document.querySelector('.eventsAttendingButton')
   const createEventButtonHome = document.querySelector('.createEventButtonHome')
   const seeUsersButton = document.querySelector('.seeUsersButton')
-
-  const user = JSON.parse(localStorage.getItem('user'))
+  const user = getUser()
 
   welcomeButton.addEventListener('click', () => {
-    SeeEventsPage()
+    fetchEvents()
   })
 
   eventsAttendingButton.addEventListener('click', () => {
@@ -21,7 +21,7 @@ export const addButtonEventListeners = (welcomeButton) => {
   })
 
   createEventButtonHome.addEventListener('click', () => {
-    checkIfIsUser()
+    checkIfIsUser(user)
     if (user) {
       CreateEventForm()
     }
@@ -29,7 +29,7 @@ export const addButtonEventListeners = (welcomeButton) => {
   if (user && user.rol === "admin") {
     seeUsersButton.addEventListener('click', () => {
       checkIfIsUser(user)
-      SeeAllUsers()
+      fetchAllUsers()
     })
   }
 

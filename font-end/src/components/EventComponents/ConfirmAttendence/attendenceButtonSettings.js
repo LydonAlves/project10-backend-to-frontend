@@ -1,7 +1,8 @@
-import { userLoggedId } from '../../LogUser/Login/Login'
+import { getUser } from '../../../utils/getUser'
 
 export const attendenceButtonsSettings = (eventsImAttending) => {
   const attendButtons = document.querySelectorAll('.attendButtonEventsP')
+  const user = getUser()
 
   attendButtons.forEach((button) => {
     const eventId = button.getAttribute('data-event-id')
@@ -13,7 +14,7 @@ export const attendenceButtonsSettings = (eventsImAttending) => {
     }
 
     if (
-      localStorage.getItem(`attendanceConfirmed_${userLoggedId}_${eventId}`) ===
+      localStorage.getItem(`attendanceConfirmed_${user}_${eventId}`) ===
       'true'
     ) {
       button.innerText = 'Attendance Confirmed'

@@ -5,10 +5,10 @@ import {
   dateDropdownLogic
 } from '../../../components/EventComponents/DateSelector/DateSelector'
 import './CreateEvent.css'
-import { Home } from '../../Home/Home'
 import { createEventImg } from '../../../components/EventComponents/EventLogic/createEventImg'
 import { characterCountLimiter } from '../../../components/EventComponents/EventLogic/characterCountLimiter'
 import { dateDataCollecter } from '../../../components/EventComponents/EventLogic/dateDataCollecter'
+import { Home } from '../../../pages/Home/Home'
 
 export const CreateEventForm = () => {
   const main = document.querySelector('main')
@@ -94,22 +94,16 @@ export const CreateEventForm = () => {
   createEventImg(eventSection)
   main.append(eventSection)
 
+
   eventForm.addEventListener('submit', () => {
     event.preventDefault()
-    const dateDataDetails = dateDataCollecter()
-    const eventTitle = titleInput.value
-    const eventLocation = locationInput.value
-    const eventDescription = descriptionInput.value
-    const eventImg = uploadImgInput.files[0]
-    const eventDate = dateDataDetails
     const eventDetails = {
-      eventTitle,
-      eventLocation,
-      eventDescription,
-      eventImg,
-      eventDate
-    }
-
+      eventTitle: titleInput.value,
+      eventLocation: locationInput.value,
+      eventDescription: descriptionInput.value,
+      eventImg: uploadImgInput.files[0],
+      eventDate: dateDataCollecter()
+    };
     EventLogic(eventDetails, eventForm)
   })
 

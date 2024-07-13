@@ -1,9 +1,9 @@
 import { Home } from '../../../pages/Home/Home'
-import { LoginRegisterForm } from '../../../pages/LoginRegister/LoginRegisterForm/LoginRegister'
-
+import { LoginRegister } from '../../../pages/LoginRegister/LoginRegister'
+import { getUser } from '../../../utils/getUser'
 
 export const LogUser = (logUser) => {
-  const user = localStorage.getItem('user')
+  const user = getUser()
 
   if (user) {
     logUser.innerText = 'Log out'
@@ -16,7 +16,7 @@ export const LogUser = (logUser) => {
   } else {
     logUser.innerText = 'Login/Register'
     logUser.addEventListener('click', () => {
-      LoginRegisterForm()
+      LoginRegister()
     })
   }
 }

@@ -1,23 +1,15 @@
-import { LoginRegisterForm } from '../../../pages/LoginRegister/LoginRegisterForm/LoginRegister'
+import { LoginRegister } from '../../../pages/LoginRegister/LoginRegister'
 import { loading } from '../../loading/loading'
 import { missingInfoInForm } from './createMissingInfoForm'
 
 import { removeMessageByClassName } from './removeMessageByClass'
 
 export const Register = async (
-  userName,
-  password,
-  email,
-  telephone,
-  city,
-  form
+  userName, password, email, telephone, city, form
 ) => {
+
   const finalObject = JSON.stringify({
-    userName,
-    password,
-    email,
-    telephone,
-    city
+    userName, password, email, telephone, city
   })
 
   removeMessageByClassName(form, 'missingInfoText')
@@ -70,5 +62,5 @@ export const Register = async (
     console.log(error)
   }
 
-  LoginRegisterForm()
+  LoginRegister()
 }

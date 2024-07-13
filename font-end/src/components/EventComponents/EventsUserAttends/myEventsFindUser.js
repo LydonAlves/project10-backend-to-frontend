@@ -1,11 +1,11 @@
+import { getUser } from '../../../utils/getUser'
 import { eventsUserAttends } from './EventsUserAttends'
 
 export const myEventsFindUserId = () => {
-  let userInfoString = localStorage.getItem('user')
+  const user = getUser()
 
-  if (userInfoString) {
-    let userInfo = JSON.parse(userInfoString)
-    let userId = userInfo._id
+  if (user) {
+    let userId = user._id
     eventsUserAttends(userId)
   } else {
     eventsUserAttends()

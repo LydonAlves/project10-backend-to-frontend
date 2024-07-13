@@ -10,7 +10,6 @@ Events Creator is a web application that allows users to register, create events
 
 The backend utilizes MongoDB for data storage and Cloudinary for image storage. User authentication is managed through JSON Web Tokens (JWT).
 
-## Installation
 
 ### Prerequisites
 

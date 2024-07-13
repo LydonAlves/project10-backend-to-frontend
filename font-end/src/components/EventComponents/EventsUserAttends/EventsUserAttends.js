@@ -1,14 +1,18 @@
-import { printEvents } from '../../../pages/Event/SeeEventsPage/SeeEventsPage'
+import { seeEventsPage } from '../../../pages/Event/SeeEventsPage'
+import { getUser } from '../../../utils/getUser'
 import { notAttendingEvents } from '../NotAttendingPopUp/NotAttendingPopUp'
 
 export const eventsUserAttends = async (userId) => {
+  const user = getUser()
+  const userID = user._id
+
   let eventsId = []
   let events = []
   let eventsImAttending = true
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/v1/attendees/${userId}`
+      `http://localhost:3000/api/v1/attendees/${userID}`
     )
 
     if (!response.ok) {
@@ -16,8 +20,13 @@ export const eventsUserAttends = async (userId) => {
     }
 
     const user = await response.json()
-    console.log(user)
+    console.log(user);
+
+
+
+
     if (user === null) {
+      console.log("user is not attending any events");
       notAttendingEvents()
     }
 
@@ -26,6 +35,7 @@ export const eventsUserAttends = async (userId) => {
     console.error('Could not fetch users:', error)
     return
   }
+
 
   if (!eventsId.length) {
     console.log('error fetching user events')
@@ -48,5 +58,5 @@ export const eventsUserAttends = async (userId) => {
       console.error('Could not fetch events:', error)
     }
   }
-  printEvents(events, eventsImAttending)
+  seeEventsPage(events, eventsImAttending)
 }

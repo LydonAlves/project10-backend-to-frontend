@@ -1,20 +1,8 @@
-import { BackButton } from '../../../components/Buttons/BackButton/BackButton'
-import { createHomeButton } from '../../../components/Buttons/HomeButton/HomeButton'
-import { SeeMoreButton } from '../../../components/Buttons/SeeMoreButton/SeeMoreButton'
-import { printIndividualUser } from '../../Attendee/SeeIndividualAttendee/SeeIndividualAttendee'
-import { Home } from '../../Home/Home'
-import './PrintUser.css'
+import { SeeMoreButton } from "../../Buttons/SeeMoreButton/SeeMoreButton"
+import { printUserSeeMore } from "../printUserSeeMore"
+import './createUserCard.css'
 
-export const PrintUser = (userArray) => {
-  const main = document.querySelector('main')
-  main.innerHTML = ''
-  const printUserSection = document.createElement('section')
-  const backButton = BackButton()
-  const homeButton = createHomeButton()
-
-  printUserSection.className = 'printUserSection'
-  backButton.classList.add('seeUsersBackButton')
-
+export const createUserCard = (userArray, printUserSection) => {
   userArray.forEach((user) => {
     const printUserDiv = document.createElement('div')
     const userDiv = document.createElement('div')
@@ -69,23 +57,5 @@ export const PrintUser = (userArray) => {
 
     printUserDiv.append(userDiv, userInfoDiv)
     printUserSection.append(printUserDiv)
-  })
-
-  backButton.addEventListener('click', () => {
-    Home()
-  })
-
-  printUserSection.append()
-  main.append(homeButton, printUserSection, backButton)
-}
-
-const printUserSeeMore = (seeMore, userArray, user, userAvatar, userId) => {
-  const individualUserBackButton = BackButton()
-  individualUserBackButton.addEventListener('click', () => {
-    PrintUser(userArray)
-  })
-
-  seeMore.addEventListener('click', () => {
-    printIndividualUser(user, userAvatar, userId, individualUserBackButton)
   })
 }

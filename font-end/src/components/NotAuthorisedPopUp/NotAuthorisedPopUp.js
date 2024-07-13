@@ -1,4 +1,5 @@
-import { LoginRegisterForm } from '../../pages/LoginRegister/LoginRegisterForm/LoginRegister'
+
+import { LoginRegister } from '../../pages/LoginRegister/LoginRegister'
 import './NotAuthorisedPopUp.css'
 
 export const createNotAuthorizedPopup = (notAdmin) => {
@@ -37,6 +38,6 @@ const notAuthorizedButtons = (popUpDiv, closeButton, loginButton) => {
   })
 
   loginButton.addEventListener('click', () => {
-    LoginRegisterForm()
+    LoginRegister()
   })
 }

@@ -1,8 +1,11 @@
-import { userInfo } from '../../LogUser/Login/Login'
-import { updateAttendenceButton } from './updateAttendenceButton'
+import { getUser } from '../../../utils/getUser';
+import { getUserToken } from '../../../utils/getUserToken';
+import { updateAttendenceButton } from './updateAttendenceButton';
 
 export const ConfirmAttendence = async (eventId, attendButton) => {
-  const user = userInfo.user
+  const userToken = getUserToken();
+  const user = getUser()
+
   try {
     const response = await fetch(
       `http://localhost:3000/api/v1/attendees/${eventId}`,
@@ -10,7 +13,7 @@ export const ConfirmAttendence = async (eventId, attendButton) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${userInfo.token}`
+          Authorization: `Bearer ${userToken}`
         },
         body: JSON.stringify({ user })
       }

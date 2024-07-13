@@ -1,4 +1,4 @@
-import { Home } from '../../Home/Home'
+import { Home } from '../../../pages/Home/Home'
 import './EventCreated.css'
 
 export const EventCreated = (eventDetails) => {
