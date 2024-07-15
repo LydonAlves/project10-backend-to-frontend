@@ -1,8 +1,9 @@
 import { seeEventsPage } from "../pages/Event/SeeEventsPage"
+import { url } from "./url"
 
 export const fetchEvents = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/events')
+    const response = await fetch(`${url}events`)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }

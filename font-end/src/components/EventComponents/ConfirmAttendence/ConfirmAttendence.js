@@ -1,5 +1,6 @@
 import { getUser } from '../../../utils/getUser';
 import { getUserToken } from '../../../utils/getUserToken';
+import { url } from '../../../utils/url';
 import { updateAttendenceButton } from './updateAttendenceButton';
 
 export const ConfirmAttendence = async (eventId, attendButton) => {
@@ -8,7 +9,7 @@ export const ConfirmAttendence = async (eventId, attendButton) => {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/v1/attendees/${eventId}`,
+      `${url}attendees/${eventId}`,
       {
         method: 'POST',
         headers: {

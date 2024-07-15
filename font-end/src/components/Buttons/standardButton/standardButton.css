@@ -1,0 +1,107 @@
+.seeMoreButton {
+  height: max-content;
+  font-family: Roboto, sans-serif;
+  width: max-content;
+  font-weight: 0;
+  font-size: 14px;
+  color: var(--color-05);
+  background-color: var(--color-01);
+  padding: 10px 30px;
+  border: solid 2px var(--color-01);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 50px;
+  transition: 1000ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.seeMoreButton:hover {
+  transition: 1000ms;
+  transform: translateY(-0px);
+  background-color: var(--color-05);
+  color: var(--color-01);
+  border: solid 2px var(--color-01);
+}
+
+/* -------------------------------------------------- */
+.seeAttendeeButton {
+  font-family: Roboto, sans-serif;
+  width: max-content;
+  font-weight: 0;
+  font-size: 14px;
+  color: var(--color-05);
+  background-color: var(--color-01);
+  padding: 10px 20px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 50px;
+  transition: 1000ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  border: solid 2px var(--color-01);
+}
+
+.seeAttendeeButton:hover {
+  transition: 1000ms;
+  transform: translateY(-0px);
+  background-color: var(--color-05);
+  color: var(--color-01);
+}
+/* -------------------------------------------------- */
+.homeButton {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-weight: 800;
+  border: none;
+  background-color: transparent;
+}
+
+.homeButton:hover {
+  filter: brightness(0) invert(0.1);
+  transform: scale(1.1);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+/* -------------------------------------------------- */
+.backButton {
+  height: max-content;
+  font-family: Roboto, sans-serif;
+  width: max-content;
+  font-weight: 0;
+  font-size: 14px;
+  color: var(--color-05);
+  background-color: var(--color-02);
+  padding: 10px 30px;
+  border: solid 2px var(--color-05);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 50px;
+  transition: 1000ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  transition: 1000ms;
+  transform: translateY(-0px);
+  background-color: var(--color-05);
+  color: var(--color-02);
+  border: solid 2px var(--color-02);
+}
+
+/* -------------------------------------------------- */
+.attending {
+  background-color: var(--color-06);
+  color: white;
+  border: none;
+  width: max-content;
+  padding: var(--padding-xs);
+}

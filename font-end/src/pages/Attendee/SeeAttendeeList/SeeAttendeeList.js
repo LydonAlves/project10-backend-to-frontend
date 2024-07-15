@@ -1,16 +1,16 @@
 import { notifyNoAttendee } from '../../../components/attendeeComponents/notifyNoAttendee/notifyNoAttendee'
-import { BackButton } from '../../../components/Buttons/BackButton/BackButton'
-import { createHomeButton } from '../../../components/Buttons/HomeButton/HomeButton'
 import { SeeIndividualEvent } from '../../../components/EventComponents/SeeIndividualEvent/SeeIndividualEvent'
 import './SeeAttendeeList.css'
 import { createAttendee } from './../../../components/attendeeComponents/createAttendee/createAttendee';
+import { standardButton } from '../../../components/Buttons/standardButton/standardButton'
+import { Home } from '../../Home/Home';
 
 export const PrintAttendeeList = (attendeeDetails, event, eventDetails) => {
   const main = document.querySelector('main')
   main.innerHTML = ''
   const attendeeListSection = document.createElement('section')
-  const homeButton = createHomeButton()
-  const back = BackButton()
+  const homeButton = standardButton('Home', 'homeButton', Home)
+  const back = standardButton('<< Back', 'backButton')
 
   attendeeListSection.className = 'attendeeListSection'
   back.classList.add('seeAttendeesBackButton')

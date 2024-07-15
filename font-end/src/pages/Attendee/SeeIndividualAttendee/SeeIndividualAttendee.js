@@ -1,7 +1,7 @@
-import { BackButton } from '../../../components/Buttons/BackButton/BackButton'
 import { PrintAttendeeList } from '../SeeAttendeeList/SeeAttendeeList'
 import './SeeIndividualAttendee.css'
 import { printIndividualUser } from './../../../components/User/printIndividualUser/printIndividualUser';
+import { standardButton } from '../../../components/Buttons/standardButton/standardButton';
 
 export const SeeIndividualAttendee = async (
   attendee,
@@ -10,7 +10,7 @@ export const SeeIndividualAttendee = async (
   eventDetails,
   event
 ) => {
-  const back = BackButton()
+  const back = standardButton('<< Back', 'backButton')
   const userId = attendee._id
 
   back.addEventListener('click', () => {

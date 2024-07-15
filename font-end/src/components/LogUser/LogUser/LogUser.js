@@ -10,6 +10,7 @@ export const LogUser = (logUser) => {
     logUser.addEventListener('click', () => {
       localStorage.removeItem('token')
       localStorage.removeItem('user')
+      removeAttendanceConfirmedItems()
       LogUser(logUser)
       Home()
     })
@@ -18,5 +19,14 @@ export const LogUser = (logUser) => {
     logUser.addEventListener('click', () => {
       LoginRegister()
     })
+  }
+}
+
+const removeAttendanceConfirmedItems = () => {
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const key = localStorage.key(i);
+    if (key && key.includes('attendanceConfirmed')) {
+      localStorage.removeItem(key);
+    }
   }
 }

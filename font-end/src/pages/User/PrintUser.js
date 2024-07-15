@@ -1,15 +1,16 @@
-import { BackButton } from '../../components/Buttons/BackButton/BackButton'
-import { createHomeButton } from '../../components/Buttons/HomeButton/HomeButton'
 import { createUserCard } from '../../components/User/createUserCard/createUserCard'
 import { Home } from '../Home/Home'
 import './PrintUser.css'
+import { standardButton } from './../../components/Buttons/standardButton/standardButton';
+
+
 
 export const PrintUser = (userArray) => {
   const main = document.querySelector('main')
   main.innerHTML = ''
   const printUserSection = document.createElement('section')
-  const backButton = BackButton()
-  const homeButton = createHomeButton()
+  const backButton = standardButton('<< Back', 'backButton')
+  const homeButton = standardButton('Home', 'homeButton', Home)
 
   printUserSection.className = 'printUserSection'
   backButton.classList.add('seeUsersBackButton')

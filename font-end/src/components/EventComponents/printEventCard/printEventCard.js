@@ -1,10 +1,9 @@
 import './printEventCard.css'
 import { SeeIndividualEvent } from "../SeeIndividualEvent/SeeIndividualEvent"
-import { AttendButton } from "../../Buttons/AttendButton/AttendButton"
-import { SeeMoreButton } from "../../Buttons/SeeMoreButton/SeeMoreButton"
 import { formatDate } from "../../date/formatDate"
 import { getUserToken } from "../../../utils/getUserToken"
 import { ConfirmAttendence } from './../ConfirmAttendence/ConfirmAttendence';
+import { standardButton } from './../../Buttons/standardButton/standardButton';
 
 export const printEventCard = (events, eventsDivContainer, eventsImAttending) => {
   const loggedInUser = getUserToken()
@@ -15,9 +14,8 @@ export const printEventCard = (events, eventsDivContainer, eventsImAttending) =>
     const showEventTitle = document.createElement('p')
     const showEventDate = document.createElement('p')
     const buttonDiv = document.createElement('div')
-
-    const attendButton = AttendButton()
-    const seeMore = SeeMoreButton()
+    const attendButton = standardButton('Confirm attendence', 'attendButton')
+    const seeMore = standardButton('See more', 'seeMoreButton')
 
     let eventDateMongoDb = event.date
     let eventDate = formatDate(eventDateMongoDb)

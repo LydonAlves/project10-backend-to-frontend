@@ -1,9 +1,8 @@
-import { BackButton } from '../../Buttons/BackButton/BackButton'
-import { createHomeButton } from '../../Buttons/HomeButton/HomeButton'
-import { SeeAttendeeButton } from '../../Buttons/SeeAttendeeButton/SeeAttendee'
 import { seeEventsPage } from '../../../pages/Event/SeeEventsPage'
 import './SeeIndividualEvent.css'
 import { fetchAttendeeList } from '../../../utils/fetchAttendeeList'
+import { standardButton } from '../../Buttons/standardButton/standardButton'
+import { Home } from '../../../pages/Home/Home'
 
 export const SeeIndividualEvent = (eventDetails) => {
   const main = document.querySelector('main')
@@ -13,9 +12,9 @@ export const SeeIndividualEvent = (eventDetails) => {
   const showEventLocation = document.createElement('p')
   const showEventDescription = document.createElement('p')
   const eventDescriptionText = document.createElement('p')
-  const seeAttendeeButton = SeeAttendeeButton()
-  const back = BackButton()
-  const homeButton = createHomeButton()
+  const seeAttendeeButton = standardButton('See attendees')
+  const back = standardButton('<< Back', 'backButton')
+  const homeButton = standardButton('Home', 'homeButton', Home)
   const { event, showEventImg, showEventTitle, showEventDate, events, eventsImAttending } = eventDetails
 
   showEventLocation.innerText = `Location: ${event.location}`

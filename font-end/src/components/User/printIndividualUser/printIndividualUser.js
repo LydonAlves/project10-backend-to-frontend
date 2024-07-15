@@ -1,7 +1,8 @@
 import { addEventInfoToAttendeeCard } from "../../attendeeComponents/addEventInfoToAttendeeCard/addEventInfoToAttendeeCard";
-import { createHomeButton } from "../../Buttons/HomeButton/HomeButton"
 import { fetchAllEventInfo } from '../../../utils/fetchAlleventInfo';
 import './printIndividualUser.css'
+import { standardButton } from "../../Buttons/standardButton/standardButton";
+import { Home } from "../../../pages/Home/Home";
 
 export const printIndividualUser = async (
   attendee,
@@ -17,7 +18,7 @@ export const printIndividualUser = async (
   const seeEventsDiv = document.createElement('div')
   const attendeeName = document.createElement('h3')
   const eventContainerTitle = document.createElement('h3')
-  const homeButton = createHomeButton()
+  const homeButton = standardButton('Home', 'homeButton', Home)
 
   const eventInfo = await fetchAllEventInfo(userId)
 

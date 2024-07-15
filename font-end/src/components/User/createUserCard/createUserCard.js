@@ -1,4 +1,4 @@
-import { SeeMoreButton } from "../../Buttons/SeeMoreButton/SeeMoreButton"
+import { standardButton } from "../../Buttons/standardButton/standardButton"
 import { printUserSeeMore } from "../printUserSeeMore"
 import './createUserCard.css'
 
@@ -15,7 +15,7 @@ export const createUserCard = (userArray, printUserSection) => {
     const telephoneNumber = document.createElement('p')
     const cityTitle = document.createElement('p')
     const city = document.createElement('p')
-    const seeMore = SeeMoreButton()
+    const seeMore = standardButton('See more', 'seeMoreButton')
     const userId = user._id
 
     userAvatar.src = './assets/images/user.png'

@@ -1,6 +1,7 @@
 import { seeEventsPage } from '../../../pages/Event/SeeEventsPage'
 import { getUser } from '../../../utils/getUser'
 import { notAttendingEvents } from '../NotAttendingPopUp/NotAttendingPopUp'
+import { url } from './../../../utils/url';
 
 export const eventsUserAttends = async (userId) => {
   const user = getUser()
@@ -12,7 +13,7 @@ export const eventsUserAttends = async (userId) => {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/v1/attendees/${userID}`
+      `${url}attendees/${userID}`
     )
 
     if (!response.ok) {
@@ -45,7 +46,7 @@ export const eventsUserAttends = async (userId) => {
   for (const eventId of eventsId) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/events/${eventId}`
+        `${url}events/${eventId}`
       )
 
       if (!response.ok) {

@@ -1,4 +1,5 @@
 import { Home } from '../../../../pages/Home/Home'
+import { url } from '../../../../utils/url'
 import { loading } from '../../../loading/loading'
 import './Login.css'
 
@@ -23,7 +24,7 @@ export const Login = async (userName, password, form) => {
   form.append(loadingSpinner);
 
   try {
-    const res = await fetch('http://localhost:3000/api/v1/users/login', options);
+    const res = await fetch(`${url}users/login`, options);
     loadingSpinner.remove();
 
     if (res.status === 400) {

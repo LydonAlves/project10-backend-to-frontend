@@ -1,5 +1,5 @@
 import { SeeIndividualAttendee } from "../../../pages/Attendee/SeeIndividualAttendee/SeeIndividualAttendee"
-import { SeeMoreButton } from "../../Buttons/SeeMoreButton/SeeMoreButton"
+import { standardButton } from "../../Buttons/standardButton/standardButton"
 import './createAttendee.css'
 
 export const createAttendee = (attendeeObject) => {
@@ -10,7 +10,7 @@ export const createAttendee = (attendeeObject) => {
     const attendeeAvatar = document.createElement('img')
     const attendeeName = document.createElement('h3')
     const attendeeEmail = document.createElement('p')
-    const seeMore = SeeMoreButton()
+    const seeMore = standardButton('See more', 'seeMoreButton')
 
     attendeeDiv.className = 'attendeeDiv'
     attendeeAvatar.className = 'attendeeAvatar'

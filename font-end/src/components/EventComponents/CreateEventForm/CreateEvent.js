@@ -1,5 +1,4 @@
 import { EventLogic } from '../../../components/EventComponents/EventLogic/EventLogic'
-import { BackButton } from '../../../components/Buttons/BackButton/BackButton'
 import {
   dateDropdownList,
   dateDropdownLogic
@@ -9,6 +8,7 @@ import { createEventImg } from '../../../components/EventComponents/EventLogic/c
 import { characterCountLimiter } from '../../../components/EventComponents/EventLogic/characterCountLimiter'
 import { dateDataCollecter } from '../../../components/EventComponents/EventLogic/dateDataCollecter'
 import { Home } from '../../../pages/Home/Home'
+import { standardButton } from '../../Buttons/standardButton/standardButton'
 
 export const CreateEventForm = () => {
   const main = document.querySelector('main')
@@ -28,7 +28,7 @@ export const CreateEventForm = () => {
   const uploadImgTitle = document.createElement('p')
   const uploadImgInput = document.createElement('input')
   const createEventButton = document.createElement('button')
-  const backButton = BackButton()
+  const backButton = standardButton('<< Back', 'backButton')
 
   eventSection.className = 'eventSection'
 

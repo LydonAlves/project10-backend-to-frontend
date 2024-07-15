@@ -1,5 +1,6 @@
 import { EventCreated } from '../EventCreated/EventCreated'
 import { missingInfoInForm } from '../../LogUser/Register/createMissingInfoForm'
+import { url } from '../../../utils/url'
 
 export const EventLogic = async (eventDetails, form) => {
   const formData = new FormData()
@@ -27,7 +28,7 @@ export const EventLogic = async (eventDetails, form) => {
     body: formData
   }
 
-  const response = await fetch('http://localhost:3000/api/v1/events', options)
+  const response = await fetch(`${url}events`, options)
 
   const data = await response.json()
   eventDetails.eventImg = data.img

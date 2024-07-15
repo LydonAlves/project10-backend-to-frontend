@@ -2,12 +2,13 @@
 import { PrintUser } from './../pages/User/PrintUser';
 import { checkIfIsAdmin } from './../components/LogUser/Authorization/isAdmin';
 import { getUserToken } from './getUserToken';
+import { url } from './url';
 
 export const fetchAllUsers = async () => {
   const token = getUserToken()
 
   try {
-    const response = await fetch('http://localhost:3000/api/v1/users', {
+    const response = await fetch(`${url}users`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

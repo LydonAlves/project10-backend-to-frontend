@@ -1,9 +1,9 @@
 import { PrintUser } from "../../pages/User/PrintUser"
-import { BackButton } from "../Buttons/BackButton/BackButton"
+import { standardButton } from "../Buttons/standardButton/standardButton"
 import { printIndividualUser } from "./printIndividualUser/printIndividualUser"
 
 export const printUserSeeMore = (seeMore, userArray, user, userAvatar, userId) => {
-  const individualUserBackButton = BackButton()
+  const individualUserBackButton = standardButton('<< Back', 'backButton')
   individualUserBackButton.addEventListener('click', () => {
     PrintUser(userArray)
   })

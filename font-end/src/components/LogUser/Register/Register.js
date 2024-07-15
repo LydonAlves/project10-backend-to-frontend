@@ -1,4 +1,5 @@
 import { LoginRegister } from '../../../pages/LoginRegister/LoginRegister'
+import { url } from '../../../utils/url'
 import { loading } from '../../loading/loading'
 import { missingInfoInForm } from './createMissingInfoForm'
 
@@ -45,7 +46,7 @@ export const Register = async (
 
   try {
     const res = await fetch(
-      'http://localhost:3000/api/v1/users/register',
+      `${url}users/register`,
       options
     )
     loadingSpinner.remove();

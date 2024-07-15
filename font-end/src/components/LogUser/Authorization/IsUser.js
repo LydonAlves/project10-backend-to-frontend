@@ -1,3 +1,4 @@
+import { url } from '../../../utils/url'
 import { createNotAuthorizedPopup } from '../../NotAuthorisedPopUp/NotAuthorisedPopUp'
 
 export const checkIfIsUser = async (user) => {
@@ -6,7 +7,7 @@ export const checkIfIsUser = async (user) => {
     const userId = user._id
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1//users/${userId}`
+        `${url}users/${userId}`
       )
 
       if (response.status === 400) {
